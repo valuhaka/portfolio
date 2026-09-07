@@ -1,0 +1,38 @@
+card:
+  title: "One questionnaire to rule them all: the DASS-21"
+  url: "dass-21"
+  image: "/dass-21/dass21models.png"
+  date: "2023"
+  hashtags:
+    - statistics
+    - psychology
+  description: "This questionnaire will probably not supersede BDI and BAI, but it should. Anyways, we translated it and validated it with a sample of 8,500 people."
+
+body:
+  - "The 21-item Depression, Anxiety, and Stress (DASS-21) scales distil several classic clinical questionnaires, particularly [Beck's Depression Inventory](https://en.wikipedia.org/wiki/Beck_Depression_Inventory) and [Beck's Anxiety Inventory](https://en.wikipedia.org/wiki/Beck_Depression_Inventory)."
+  - "Developed originally at UNSW Sydney for English-speaking, the DASS-21 was translated, validated, and published for Finnish use. It is now used by several big research projects in epidemiology and psychiatry."
+
+content:
+
+  paper:
+    title: "Paper"
+    url: "/dass-21/ainias2024dass.pdf"
+    image: "/dass-21/ainias2024.png"
+    description: "I wrote up a big old validation on it (the biggest one by sample size on the questionnaire in any language) and sent it to the leading journal on psychological assessment, named Psychological Assessment. To my surprise, it was accepted ([doi:10.1037/pas0001355](https://doi.org/10.1037/)pas0001355)."
+
+  code:
+    title: "Code"
+    url: "https://github.com/valuhaka/dass21fi"
+    image: "/dass-21/dass21scree.png"
+    description: "All relevant programme code (R, lavaan) is preserved here. Unfortunately, data sharing is very tricky due to Finnish data privacy laws."
+
+  questionnaire:
+    title: "Questionnaire"
+    url: "/dass-21/dass21-fi-r.pdf"
+    image: "/dass-21/dass21kysely.png"
+    description: "Here's the questionnaire itself. Send me your score and I may refer you to [my wife](https://iiris.ainias.net)."
+
+  homepage:
+    title: "The DASS homepage, hosted by the University of New South Wales"
+    url: "https://www2.psy.unsw.edu.au/dass/"
+    description: "In case it goes down, here's [the archive link](https://web.archive.org/web/20260825081129/https://www2.psy.unsw.edu.au/groups/dass/)."

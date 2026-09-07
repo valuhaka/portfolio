@@ -1,0 +1,32 @@
+card:
+  title: "Opetin syväoppimisverkon purkamaan päänahan sähkövasteesta subkortikaalista fMRI:tä"
+  url: "/eeg-fmri/"
+  image: "/eeg-fmri/diagramme.png"
+  date: "2024"
+  hashtags:
+    - syväoppiminen
+    - neurotiede
+  description: "Ensimmäinen vakava syväoppimisprojekti, Max Planck -instituutti."
+
+body:
+  - "Toiminnallinen magneettikuva (fMRI) on erittäin tarkka mutta kallis tapa kuvata aivoja. Aivosähkökäyrät taas ovat helppoja ja halpoja, mutta niitä voidaan (useimmiten) mitata vain päänahalta. Professori [Arno Villringerin](https://en.wikipedia.org/wiki/Arno_Villringer) ryhmä [Max Planckin kognitio- ja neurotieteen instituutissa](https://www.cbs.mpg.de) tutkii aivojen ja kehon vuorovaikutusta monisensorisesti."
+  - "Minä kehitin ja implementoin syviä neuroverkkoja, jotka oppivat ennustamaan [BOLD-vastetta](https://en.wikipedia.org/wiki/Blood-oxygenation-level–dependent_imaging) [corpus striatumista](https://fi.wikipedia.org/wiki/Aivojuovio), joka on palkkiokäyttäytymiseen liitetty subkortikaalinen tumake."
+
+content:
+  paper:
+    title: "Juttu"
+    url: "https://doi.org/10.1162/IMAG.a.1160"
+    description: "Tulokset julkaistiin johtavassa neurotiedelehdessä, Imaging Neurosciencessa."
+    image: "/eeg-fmri/herzog2026.png"
+
+  code:
+    title: "Koodi"
+    url: "https://github.com/valuhaka/eeg-to-fmri"
+    description: "Tässä repossa on koodia (python, matlab; torch, scipy, sklearn; wandb, jolla esiprosessoidaan aineisto, sovitetaan malleja ja tutkitaan niitä."
+    image: "/eeg-fmri/topofreq.png"
+
+  osf:
+    title: "Esirekisteriöinti"
+    url: "https://doi.org/10.17605/OSF.IO/8SN9H"
+    description: "Tutkimus esirekisteröitiin Open Science Foundationille nimellä *From Surface To Depth: Using Deep Learning To Predict Striatal FMRI Reward Signaling In The EEG* (Vähäsarja & Herzog, 2024)"
+    image: "/eeg-fmri/stat.png"

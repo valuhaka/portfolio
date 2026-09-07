@@ -1,0 +1,33 @@
+card:
+  title: "I decoded subcortical fMRI from scalp EEG using Deep Learning"
+  url: "/eeg-fmri/"
+  image: "/eeg-fmri/diagramme.png"
+  date: "2024"
+  hashtags:
+    - deeplearning
+    - neuroscience
+  description: "My first serious deep learning project, conducted at the Max Planck Institute."
+
+body:
+  - "Functional magnetic resonance imaging (fMRI) is a highly accurate but expensive way to image the brain. Electroencephalography is cheap and accessible but may (generally) only be recorded at the scalp. Professor [Arno Villringer's](https://en.wikipedia.org/wiki/Arno_Villringer) group at the [Max Planck Institute for Human cognitive and brain sciences](https://www.cbs.mpg.de/en) studies brain-body interactions using multimodal approaches."
+  - "I developed and implemented deep neural networks for predicting [BOLD activation](https://en.wikipedia.org/wiki/Blood-oxygenation-level–dependent_imaging) in the [striatum](https://en.wikipedia.org/wiki/Striatum), a subcortical nucleus that plays a key role in reward-related processing."
+
+content:
+
+  paper:
+    title: "Paper"
+    url: "https://doi.org/10.1162/IMAG.a.1160"
+    description: "The results were published in the leading neuroscience journal, Imaging Neuroscience."
+    image: "/eeg-fmri/herzog2026.png"
+
+  code:
+    title: "Code"
+    url: "https://github.com/valuhaka/eeg-to-fmri"
+    description: "This repo contains programme code (python, matlab; torch, scipy, sklearn; wandb) for preprocessing the data, fitting models, and interrogating said models."
+    image: "/eeg-fmri/topofreq.png"
+
+  osf:
+    title: "Preregistration"
+    url: "https://doi.org/10.17605/OSF.IO/8SN9H"
+    description: "The study was preregistered with the Open Science Foundation as *From Surface To Depth: Using Deep Learning To Predict Striatal FMRI Reward Signaling In The EEG* (Vähäsarja & Herzog, 2024)"
+    image: "/eeg-fmri/stat.png"

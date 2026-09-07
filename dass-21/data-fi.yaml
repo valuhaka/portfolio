@@ -1,0 +1,38 @@
+card:
+  title: "Yksi gallup heitä hallitsee: DASS-21"
+  url: "dass-21"
+  image: "/dass-21/dass21models.png"
+  date: "2023"
+  hashtags:
+    - tilastotiede
+    - psykologia
+  description: "Tämä kysely tuskin korvaa BDI:tä tai BAI:ta, mutta sen kyllä pitäisi. Joka tapauksessa se on nyt käännetty ja validoitu 8 500 ihmisen otoksella."
+
+body:
+  - "21-kohtainen DASS-kysely (Depression, Anxiety, and Stress) koostaa useamman klassisen kliinisen kyselyn, erityisesti [Beckin masennus-](https://en.wikipedia.org/wiki/Beck_Depression_Inventory) ja [ahdistuskyselyn](https://en.wikipedia.org/wiki/Beck_Depression_Inventory)."
+  - "DASS-21 kehitettiin alunperin Uuden Etelä-Walesin yliopistossa englanninkieliseen käyttöön, mutta me käänsimme, validoimmeja julkaisimme sen suomenkieliseen käyttöön. Sitä käyttää nyt pari laajaa epidemiologista ja psykiatrista tutkimusta."
+
+content:
+
+  paper:
+    title: "Juttu"
+    url: "/dass-21/ainias2024dass.pdf"
+    image: "/dass-21/ainias2024.png"
+    description: "Tekaisin kunnon validaation DASSista (tietääkseni suurimman mitä millään kielelä on tehty) ja lähetin sen psykologisen arvioinnin johtavaan lehteen, nimeltään Psychological Assessment. Yllätyksekseni se julkaistiin ([doi:10.1037/pas0001355](https://doi.org/10.1037/)pas0001355)."
+
+  code:
+    title: "Koodi"
+    url: "https://github.com/valuhaka/dass21fi"
+    image: "/dass-21/dass21scree.png"
+    description: "Kaikki relevantti koodi (R, lavaan) on täällä. Valitettavasti datan jakaminen on suomen tietoturvalainsäädännön vuoksi kinkkistä."
+
+  questionnaire:
+    title: "Kysely"
+    url: "/dass-21/dass21-fi-r.pdf"
+    image: "/dass-21/dass21kysely.png"
+    description: "Tässä kysely itse. Lähetä pisteesi minulle, niin saatan ohjata sinut [vaimolleni](https://iiris.ainias.net)."
+
+  homepage:
+    title: "DASSin kotisivut UNSW:n sivuilla"
+    url: "https://www2.psy.unsw.edu.au/dass/"
+    description: "Jos sivu katoaa, [tässä arkistoitu versio](https://web.archive.org/web/20260825081129/https://www2.psy.unsw.edu.au/groups/dass/)."
