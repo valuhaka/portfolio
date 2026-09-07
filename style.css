@@ -185,8 +185,21 @@ main {
 .card h2 {
     margin-top: 0;
     margin-bottom: 12px;
+    padding-right: 32px;
     font-size: 1.5rem;
     font-weight: normal;
+}
+
+.card-link-icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: var(--card-border);
+    transition: color 0.3s;
+}
+
+.card:hover .card-link-icon {
+    color: var(--text-color);
 }
 
 .card p {

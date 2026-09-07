@@ -89,6 +89,38 @@ function createCard(data) {
         cardDiv.appendChild(h2);
     }
 
+    if (data.url) {
+        const svgNS = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgNS, "svg");
+        svg.setAttribute("width", "18");
+        svg.setAttribute("height", "18");
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("fill", "none");
+        svg.setAttribute("stroke", "currentColor");
+        svg.setAttribute("stroke-width", "2");
+        svg.setAttribute("stroke-linecap", "round");
+        svg.setAttribute("stroke-linejoin", "round");
+        svg.setAttribute("class", "card-link-icon");
+
+        const path = document.createElementNS(svgNS, "path");
+        path.setAttribute("d", "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6");
+
+        const polyline = document.createElementNS(svgNS, "polyline");
+        polyline.setAttribute("points", "15 3 21 3 21 9");
+
+        const line = document.createElementNS(svgNS, "line");
+        line.setAttribute("x1", "10");
+        line.setAttribute("y1", "14");
+        line.setAttribute("x2", "21");
+        line.setAttribute("y2", "3");
+
+        svg.appendChild(path);
+        svg.appendChild(polyline);
+        svg.appendChild(line);
+
+        cardDiv.appendChild(svg);
+    }
+
     if (data.description) {
         const p = document.createElement('p');
         p.innerHTML = parseMarkdown(data.description);
