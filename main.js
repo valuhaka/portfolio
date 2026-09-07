@@ -54,6 +54,15 @@ function initHeaderLogic() {
             location.reload();
         });
     }
+
+    const hamburgerToggle = document.getElementById('hamburger-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (hamburgerToggle && navMenu) {
+        hamburgerToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+    }
 }
 
 function parseMarkdown(text) {
