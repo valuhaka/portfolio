@@ -3,9 +3,6 @@ card:
   url: "/eeg-fmri/"
   image: "/eeg-fmri/diagramme.png"
   date: "2024"
-  hashtags:
-    - syväoppiminen
-    - neurotiede
   description: "Ensimmäinen vakava syväoppimisprojekti, Max Planck -instituutti."
 
 body:

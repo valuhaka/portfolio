@@ -1,0 +1,31 @@
+card:
+  title: "I tried to build B2B SAAS"
+  url: "/havain/"
+  image: "/havain/portal1.png"
+  date: "2026"
+  description: "Trying to predict sickness absence with computer use data. Then trying to make it a product."
+
+body:
+  - "We could predict sickness absence with no clinical data, using only your mouse movements. Or that was our pitch at Neurochallenge 2025 (we won the main prize, 15.000€)."
+  - "In the end, we raised another 12.000€ from [Startup-säätiö](https://www.startup-saatio.fi/), signed a Statements of Intent to do a big pilot with the [The Finnish Institute of Occupational Health](https://ttl.fi). We also joined [Kiuas](https://kiuas.com). Then we cold-called 1000 people, leading to 50 demos and 20 follow ups (half of which we canceled)."
+  - "We killed it off when we found out most *employees* hated the idea of automatic monitoring. We decided the path of least evil was coming up with something users want to use."
+
+content:
+
+  userapp:
+    title: "Demo"
+    url: "/havain/havain-demo"
+    description: "Coming soon..."
+    image: "/havain/portal2.png"
+
+  material:
+    title: "Early sales material"
+    url: "/havain/info-slides.pdf"
+    image: "frontpage.png"
+    description: "Graphic design is my passion."
+
+  hackathon:
+    title: "Neurochallenge"
+    url: "https://www.linkedin.com/posts/neurochallenge2025-brainhealth-mentalwellbeing-ugcPost-7401615323885449220-1Y89"
+    image: "/havain/collaborators.png"
+    description: "Neurochallenge 2025 was a hackathon sponsored by [Olvi Foundation](https://www.olvisaatio.fi/) and [Neurocenter Finland](https://www.neurocenterfinland.fi/?lang=en). We won."

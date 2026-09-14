@@ -3,9 +3,6 @@ card:
   url: "dass-21"
   image: "/dass-21/dass21models.png"
   date: "2023"
-  hashtags:
-    - statistics
-    - psychology
   description: "This questionnaire will probably not supersede BDI and BAI, but it should. Anyways, we translated it and validated it with a sample of 8,500 people."
 
 body:

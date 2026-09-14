@@ -3,9 +3,6 @@ card:
   url: "/eeg-fmri/"
   image: "/eeg-fmri/diagramme.png"
   date: "2024"
-  hashtags:
-    - deeplearning
-    - neuroscience
   description: "My first serious deep learning project, conducted at the Max Planck Institute."
 
 body:

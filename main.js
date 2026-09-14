@@ -1,6 +1,28 @@
 const currentLang = localStorage.getItem('siteLang') || 'en';
 
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('focused-card');
+        } else {
+            entry.target.classList.remove('focused-card');
+        }
+    });
+}, {
+    root: null,
+    rootMargin: '-33% 0px -33% 0px',
+    threshold: 0
+});
+
 document.addEventListener("DOMContentLoaded", () => {
+    // Process static language switches
+    document.querySelectorAll('.lang-switch').forEach(el => {
+        const localizedText = el.getAttribute(`data-${currentLang}`);
+        if (localizedText) {
+            el.textContent = localizedText;
+        }
+    });
+
     fetch('/header.html')
         .then(response => response.text())
         .then(html => {
@@ -79,46 +101,28 @@ function createCard(data) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card';
 
-    if (data.title) {
-        const h2 = document.createElement('h2');
-        const mainLink = document.createElement('a');
-        mainLink.href = data.url || '#';
-        mainLink.className = 'card-main-link';
-        mainLink.textContent = data.title;
-        h2.appendChild(mainLink);
-        cardDiv.appendChild(h2);
+    if (data.url) {
+        cardDiv.classList.add('is-clickable');
+        cardDiv.addEventListener('click', (e) => {
+            const clickedLink = e.target.closest('a');
+            if (!clickedLink) {
+                window.location.href = data.url;
+            }
+        });
     }
 
-    if (data.url) {
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        svg.setAttribute("width", "18");
-        svg.setAttribute("height", "18");
-        svg.setAttribute("viewBox", "0 0 24 24");
-        svg.setAttribute("fill", "none");
-        svg.setAttribute("stroke", "currentColor");
-        svg.setAttribute("stroke-width", "2");
-        svg.setAttribute("stroke-linecap", "round");
-        svg.setAttribute("stroke-linejoin", "round");
-        svg.setAttribute("class", "card-link-icon");
-
-        const path = document.createElementNS(svgNS, "path");
-        path.setAttribute("d", "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6");
-
-        const polyline = document.createElementNS(svgNS, "polyline");
-        polyline.setAttribute("points", "15 3 21 3 21 9");
-
-        const line = document.createElementNS(svgNS, "line");
-        line.setAttribute("x1", "10");
-        line.setAttribute("y1", "14");
-        line.setAttribute("x2", "21");
-        line.setAttribute("y2", "3");
-
-        svg.appendChild(path);
-        svg.appendChild(polyline);
-        svg.appendChild(line);
-
-        cardDiv.appendChild(svg);
+    if (data.title) {
+        const h2 = document.createElement('h2');
+        if (data.url) {
+            const mainLink = document.createElement('a');
+            mainLink.href = data.url;
+            mainLink.className = 'card-main-link';
+            mainLink.textContent = data.title;
+            h2.appendChild(mainLink);
+        } else {
+            h2.textContent = data.title;
+        }
+        cardDiv.appendChild(h2);
     }
 
     if (data.description) {
@@ -129,7 +133,7 @@ function createCard(data) {
 
     let imageUrl = data.image;
 
-    if (!imageUrl && data.url && data.url.startsWith('http')) {
+    if (!imageUrl) {
         const fallbackCount = 5;
         const dataLength = JSON.stringify(data).length;
         const fallbackIndex = (dataLength % fallbackCount) + 1;
@@ -154,27 +158,26 @@ function createCard(data) {
         cardDiv.appendChild(imgWrapper);
     }
 
-    if (data.date || (data.hashtags && Array.isArray(data.hashtags))) {
+    if (data.date || data.url) {
         const footerDiv = document.createElement('div');
         footerDiv.className = 'card-footer';
 
-        const dateSpan = document.createElement('span');
-        dateSpan.className = 'card-date';
-        if (data.date) dateSpan.textContent = data.date;
-        footerDiv.appendChild(dateSpan);
-
-        const tagsDiv = document.createElement('div');
-        tagsDiv.className = 'card-hashtags';
-
-        if (Array.isArray(data.hashtags)) {
-            data.hashtags.forEach(tag => {
-                const tagSpan = document.createElement('span');
-                tagSpan.className = 'hashtag';
-                tagSpan.textContent = '#' + tag;
-                tagsDiv.appendChild(tagSpan);
-            });
+        if (data.date) {
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'card-date';
+            dateSpan.textContent = data.date;
+            footerDiv.appendChild(dateSpan);
+        } else {
+            footerDiv.appendChild(document.createElement('span'));
         }
-        footerDiv.appendChild(tagsDiv);
+
+        if (data.url) {
+            const actionSpan = document.createElement('span');
+            actionSpan.className = 'card-learn-more';
+            actionSpan.textContent = currentLang === 'fi' ? 'Lisätietoja' : 'Learn more';
+            footerDiv.appendChild(actionSpan);
+        }
+
         cardDiv.appendChild(footerDiv);
     }
 
@@ -213,7 +216,11 @@ function loadPortfolio(container) {
 
             Promise.all(cardFetches).then(cardsData => {
                 cardsData.forEach(card => {
-                    if (card) container.appendChild(createCard(card));
+                    if (card) {
+                        const newCard = createCard(card);
+                        container.appendChild(newCard);
+                        cardObserver.observe(newCard);
+                    }
                 });
             });
         });
@@ -302,7 +309,9 @@ function loadProject(container) {
             if (data.content && typeof data.content === 'object') {
                 Object.values(data.content).forEach(itemData => {
                     if (itemData) {
-                        container.appendChild(createCard(itemData));
+                        const newCard = createCard(itemData);
+                        container.appendChild(newCard);
+                        cardObserver.observe(newCard);
                     }
                 });
             }
