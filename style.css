@@ -52,6 +52,22 @@ a {
     border-bottom: 1px solid var(--card-border);
 }
 
+.header-inner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 36px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 nav {
     display: flex;
     gap: 24px;
@@ -141,9 +157,16 @@ main {
     max-width: 600px;
     margin-bottom: 80px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 24px;
+    box-sizing: border-box;
+}
+
+.intro-text {
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .intro-text h1 {
@@ -156,21 +179,23 @@ main {
     margin: 0 0 4px 0;
 }
 
-.intro-face {
-    flex: 0 0 160px;
+.intro-face-wrapper {
     width: 160px;
     height: 160px;
     min-width: 160px;
-    max-width: 160px;
-    object-fit: cover;
+    min-height: 160px;
     flex-shrink: 0;
+    overflow: hidden;
+    display: block;
 }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.intro-face {
+    width: 160px;
+    height: 160px;
+    min-width: 160px;
+    min-height: 160px;
+    object-fit: cover;
+    display: block;
 }
 
 .card {

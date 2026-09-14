@@ -10,7 +10,7 @@ const cardObserver = new IntersectionObserver((entries) => {
     });
 }, {
     root: null,
-    rootMargin: '-33% 0px -33% 0px',
+    rootMargin: '-20% 0px -20% 0px',
     threshold: 0
 });
 
