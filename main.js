@@ -15,7 +15,10 @@ const cardObserver = new IntersectionObserver((entries) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Process static language switches
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('night-mode');
+    }
+
     document.querySelectorAll('.lang-switch').forEach(el => {
         const localizedText = el.getAttribute(`data-${currentLang}`);
         if (localizedText) {
@@ -46,10 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initHeaderLogic() {
     const body = document.body;
-
+    
     const themeToggle = document.getElementById('theme-toggle');
     const moonIcon = document.getElementById('moon-icon');
     const sunIcon = document.getElementById('sun-icon');
+
+    if (body.classList.contains('night-mode')) {
+        if (moonIcon) moonIcon.style.display = 'none';
+        if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+        if (moonIcon) moonIcon.style.display = 'block';
+        if (sunIcon) sunIcon.style.display = 'none';
+    }
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
