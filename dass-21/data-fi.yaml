@@ -1,5 +1,5 @@
 card:
-  title: "Yksi gallup heitä hallitsee: DASS-21"
+  title: "Validoin kyselyn"
   url: "dass-21"
   image: "/dass-21/dass21models.png"
   date: "2023"
@@ -16,6 +16,11 @@ content:
     url: "/dass-21/ainias2024dass.pdf"
     image: "/dass-21/ainias2024.png"
     description: "Tekaisin kunnon validaation DASSista (tietääkseni suurimman mitä millään kielelä on tehty) ja lähetin sen psykologisen arvioinnin johtavaan lehteen, nimeltään Psychological Assessment. Yllätyksekseni se julkaistiin ([doi:10.1037/pas0001355](https://doi.org/10.1037/)pas0001355)."
+
+  supplement:
+    title: "Liiteet"
+    url: "/dass-21/ainias2024dass-supp.pdf"
+    description: "Liitteet ovat täällä."
 
   code:
     title: "Koodi"
